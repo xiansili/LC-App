@@ -14,7 +14,6 @@ export default new Router({
       name: "home",
       component: Home
     },
-    
     {
       path: "/Category",
       name: "category",
