@@ -1,20 +1,20 @@
 <template>
   <div>
     <div>
-      <mt-tabbar v-model="message">
-        <mt-tab-item id="music" to="/">
+      <mt-tabbar v-model="message" @click.native='change(message)'>
+        <mt-tab-item id="music">
           <img slot="icon" src>
           音乐
         </mt-tab-item>
-        <mt-tab-item id="movie" to="/movie">
+        <mt-tab-item id="movie">
           <img slot="icon" src>
           电影
         </mt-tab-item>
-        <mt-tab-item id="book" to="/book">
+        <mt-tab-item id="book">
           <img slot="icon" src>
           书籍
         </mt-tab-item>
-        <mt-tab-item id="me" to="/me">
+        <mt-tab-item id="me">
           <img slot="icon" src>
           我的
         </mt-tab-item>
@@ -41,19 +41,37 @@
 </template>
 
 <script>
-import Music from "@/views/Music";
-import Movie from "@/views/Movie";
-import Book from "@/views/Book";
-import Me from "@/views/Me";
+// import Music from "@/views/Music";
+// import Movie from "@/views/Movie";
+// import Book from "@/views/Book";
+// import Me from "@/views/Me";
 export default {
   data() {
     return {
-      message: this.selected
+      message: "music"
     };
   },
-  components: { Music, Movie, Book, Me },
+  //创建阶段
+  created() {
+      //利用H5的缓存机制缓存路由
+   this.message = localStorage.getItem('message');
+  },
+  //方法
+  methods: {
+      //利用H5的缓存机制缓存路由
+      change(message){
+          localStorage.setItem('message', message)
+      }
+  },
+
+  //   components: { Music, Movie, Book, Me },
+
+  computed: {
+     
+  },
   watch: {
-    message(val, oldVal) {
+    //它可以用来监测Vue实例上的数据变动
+    message(val) {
       // 这里就可以通过 val 的值变更来确定去向
       switch (val) {
         case "music":
