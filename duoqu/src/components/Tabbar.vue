@@ -1,21 +1,21 @@
 <template>
   <div>
     <div>
-      <mt-tabbar v-model="message" @click.native='change(message)'>
+      <mt-tabbar  v-model="message" @click.native='change(message)' fixed>
         <mt-tab-item id="music">
-          <img slot="icon" src>
+          <img slot="icon" src='@/assets/img/music.png'>
           音乐
         </mt-tab-item>
         <mt-tab-item id="movie">
-          <img slot="icon" src>
+          <img slot="icon" src='@/assets/img/movie.png'>
           电影
         </mt-tab-item>
         <mt-tab-item id="book">
-          <img slot="icon" src>
+          <img slot="icon" src='@/assets/img/book.png'>
           书籍
         </mt-tab-item>
         <mt-tab-item id="me">
-          <img slot="icon" src>
+          <img slot="icon" src='@/assets/img/me.png'>
           我的
         </mt-tab-item>
       </mt-tabbar>

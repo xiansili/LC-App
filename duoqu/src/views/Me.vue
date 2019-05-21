@@ -1,12 +1,41 @@
 <template>
-  <div>
-    <h1>hahahahahahah</h1>
+  <div  class="me">
+    <Card title="Options" icon="ios-options" class="card" :padding="0" shadow >
+      <CellGroup>
+        <Cell title="Only show titles"/>
+        <Cell title="Display label content" label="label content"/>
+        <Cell title="Display right content" extra="details"/>
+        <Cell title="Link" extra="details" to="/components/button"/>
+        <Cell title="Open link in new window" to="/components/button" target="_blank"/>
+        <Cell title="Disabled" disabled/>
+        <Cell title="Selected" selected/>
+        <Cell title="With Badge" to="/components/badge">
+          <Badge :count="10" slot="extra"/>
+        </Cell>
+        <Cell title="With Switch">
+          <Switch v-model="switchValue" slot="extra"/>
+        </Cell>
+      </CellGroup>
+    </Card>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      switchValue: true
+    };
+  }
+};
 </script>
 
 <style lang="scss" scoped>
+.me{
+  padding: 0.2rem;
+  background: #f8f8f9;
+}
+.card{
+  width: 300px;
+}
 </style>
