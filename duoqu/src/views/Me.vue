@@ -1,21 +1,27 @@
 <template>
-  <div  class="me">
-    <Card title="Options" icon="ios-options" class="card" :padding="0" shadow >
+  <div class="me">
+    <Card title="个人中心" icon="ios-options" class="card" :padding="0" shadow >
       <CellGroup>
-        <Cell title="Only show titles"/>
-        <Cell title="Display label content" label="label content"/>
-        <Cell title="Display right content" extra="details"/>
-        <Cell title="Link" extra="details" to="/components/button"/>
-        <Cell title="Open link in new window" to="/components/button" target="_blank"/>
-        <Cell title="Disabled" disabled/>
-        <Cell title="Selected" selected/>
-        <Cell title="With Badge" to="/components/badge">
-          <Badge :count="10" slot="extra"/>
-        </Cell>
-        <Cell title="With Switch">
-          <Switch v-model="switchValue" slot="extra"/>
-        </Cell>
+        <Cell title="用户名" extra="details"/>
+        <Cell title="点我登录" to="/login" selected/> 
+        <Cell title="设置" />
+        <Cell title="1.1.0" disabled/>
+        <Cell title="联系我" />
       </CellGroup>
+      <Collapse >
+        <Panel name="1">
+            QQ
+            <p slot="content">865915497</p>
+        </Panel>
+        <Panel name="2">
+            电话
+            <p slot="content">18804626062</p>
+        </Panel>
+        <Panel name="3">
+            github
+            <p slot="content"></p>
+        </Panel>
+    </Collapse>
     </Card>
   </div>
 </template>
@@ -36,6 +42,6 @@ export default {
   background: #f8f8f9;
 }
 .card{
-  width: 300px;
+  width: 100%;
 }
 </style>

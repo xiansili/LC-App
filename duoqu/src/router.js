@@ -4,6 +4,7 @@ import Music from "./views/Music.vue";
 import Movie from "./views/Movie.vue";
 import Book from "./views/Book.vue";
 import Me from "./views/Me.vue";
+import Login from "./views/Login.vue";
 
 Vue.use(Router);
 
@@ -27,7 +28,12 @@ export default new Router({
     {
       path: "/me",
       name: "Me",
-      component: Me
-    }
+      component: Me,
+    },
+      { 
+          path: '/login', 
+        name: "Login",
+        component: Login 
+      },
   ]
 });
